@@ -1,7 +1,7 @@
-To run this POC
+# To run this POC
 1.  docker-compose -f docker-compose-CeleryExecutor.yml up
 2.  Navigate to http://localhost:8080/
-3.  Create variables 
+3.  Create variables
     a.  Navigate to : Admin -> Variables
     b.  Key = settings
     c.  Val = { "login": "my_login", "password": "my_password", "config": { "role": "admin" } }
@@ -11,4 +11,4 @@ To run this POC
     c.  Click on the DAG
     d.  Trigger DAG
     e.  Go to Graph View
-    f.  Click on the task on View Log
+    f.  Click on the task and View Log
