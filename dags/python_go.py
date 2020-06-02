@@ -18,19 +18,12 @@ lib = cdll.LoadLibrary(r'/usr/local/airflow/dags/send_remind.so')
 class GoString(c.Structure):
     _fields_ = [("p", c.c_char_p), ("n", c.c_longlong)]
 
-# lib.SendRemind.argtypes = [GoString]
-# text = b"PYTHON MESSAGE"
-# gs = GoString(text, len(text))
-# result = c.c_char_p(lib.SendRemind(gs))
-
 
 settings = Variable.get("settings", deserialize_json=True)
 
-# And be able to access the values like in a dictionary
 print("*** Login : {}".format(settings['login']))
 print("**** Role : {}".format(settings['config']['role']))
 
-#print("**** MY_TEST_ENV : {}".format(Variable.get("MY_TEST_ENV")))
 
 
 with DAG('calling_go_from_python_dag', description='Call Golang Func from Python DAG', schedule_interval=None, start_date=datetime(2020, 5, 28),

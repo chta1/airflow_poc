@@ -2,8 +2,7 @@ import os
 
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
-import logging
-from airflow.models import Variable
+
 
 from datetime import datetime
 
